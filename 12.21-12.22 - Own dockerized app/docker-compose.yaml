@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  app:
+    image: bloglist-frontend
+    build:
+      context: ./bloglist-frontend # The context will pick this directory as the "build context"
+      dockerfile: Dockerfile # This will simply tell which dockerfile to read
+    ports:
+      - 3000:3000
+    container_name: bloglist-frontend # This will name the container hello-front-dev
+
+  backend:
+    image: bloglist-backend
+    build:
+      context: ./bloglist-backend # The context will pick this directory as the "build context"
+      dockerfile: Dockerfile # This will simply tell which dockerfile to read
+    ports:
+      - 3003:3003
+    container_name: bloglist-backend # This will name the container hello-front-dev
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy-bloglist

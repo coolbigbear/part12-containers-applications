@@ -1,0 +1,39 @@
+DELETE http://localhost:3001/api/persons/3
+
+###
+
+GET http://localhost:3001/api/persons/5901
+
+###
+
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RVc2VybmFtZTIiLCJpZCI6IjYxYTAyN2IzY2M0OTQxNTZiMjYyNTQyYyIsImlhdCI6MTYzODA2MTAwMH0.6Ubp8NQQdnqQfSbF5PvU5OjZIc5TFH8DTiJ4TwHpw0Y
+
+{
+    "title": "Title",
+    "author": "author",
+    "url": "url",
+    "likes": 69
+}
+
+###
+
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+    "username": "testUsername2",
+    "name": "testName2",
+    "password": "testUserPassword2"
+}
+
+###
+
+PUT http://localhost:3001/api/persons/617a03387819c7f9b82492ad
+Content-Type: application/json
+
+{
+    "name": "Jas",
+    "number": "123"
+}
